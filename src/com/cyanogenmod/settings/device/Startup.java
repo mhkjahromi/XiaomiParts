@@ -29,13 +29,16 @@ import android.util.Log;
 import java.io.File;
 
 import com.cyanogenmod.settings.device.utils.FileUtils;
+import com.cyanogenmod.settings.device.dirac.DiracUtils;
 
 public class Startup extends BroadcastReceiver {
 
     private static final String TAG = Startup.class.getSimpleName();
 
     @Override
-    public void onReceive(Context context, Intent intent) {
+    public void onReceive(final Context context, Intent intent) {
+        if (DEBUG) Log.d(TAG, "Received boot completed intent");
+        DiracUtils.initialize();
         final String action = intent.getAction();
         if (Intent.ACTION_BOOT_COMPLETED.equals(action)
                 || Intent.ACTION_PRE_BOOT_COMPLETED.equals(action)) {
