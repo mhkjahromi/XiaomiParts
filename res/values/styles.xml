@@ -34,6 +34,8 @@
     <style name="SettingsSwitchPreference" parent="@*android:style/Preference.DeviceDefault.SwitchPreference">
         <item name="android:iconSpaceReserved">true</item>
         <item name="android:singleLineTitle">false</item>
+        <item name="android:trackTint">@color/switchbar_switch_track_tint</item>
+        <item name="android:thumbTint">@color/switchbar_switch_thumb_tint</item>
     </style>
 
     <style name="SettingsPreferenceCategory" parent="@*android:style/Preference.DeviceDefault.Category">
@@ -52,11 +54,6 @@
 
     <style name="PreferenceFragmentStyle" parent="@*android:style/PreferenceFragment.Material">
         <item name="allowDividerAfterLastItem">false</item>
-    </style>
-	
-    <style name="SwitchBar.Switch">
-        <item name="android:trackTint">@color/switchbar_switch_track_tint</item>
-        <item name="android:thumbTint">@color/switchbar_switch_thumb_tint</item>
     </style>
 	
     <style name="SettingsListPreference" parent="SettingsPreference"/>
