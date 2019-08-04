@@ -36,8 +36,7 @@ public class Startup extends BroadcastReceiver {
     private static final String TAG = Startup.class.getSimpleName();
 
     @Override
-    public void onReceive(final Context context, Intent intent) {
-        if (DEBUG) Log.d(TAG, "Received boot completed intent");
+    public void onReceive(Context context, Intent intent) {
         DiracUtils.initialize();
         final String action = intent.getAction();
         if (Intent.ACTION_BOOT_COMPLETED.equals(action)
