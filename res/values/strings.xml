@@ -83,4 +83,8 @@
     <string name="dirac_preset_country">Country</string>
     <string name="dirac_preset_dance">Dance</string>
     <string name="dirac_preset_metal">Metal</string>
+	
+    <!-- SwitchBar -->
+	<string name="switch_bar_on">on</string>
+    <string name="switch_bar_off">off</string>
 </resources>
