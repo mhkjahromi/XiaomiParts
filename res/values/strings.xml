@@ -125,8 +125,8 @@
     <string name="preset_hybrid_mamba">Hybrid Mamba</string>
 
     <!-- Buttons -->
-    <string name="Buttons_title">Buttons</string>
-    <string name="swapbutoons_title">Swap buttons</string>
+    <string name="buttons_title">Buttons</string>
+    <string name="swapbuttons_title">Swap buttons</string>
     <string name="swapbuttons_summary">Swap the order of recents and back buttons</string>
 
     <!-- menu -->
