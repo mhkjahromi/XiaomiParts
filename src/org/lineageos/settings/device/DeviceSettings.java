@@ -139,7 +139,7 @@ public class DeviceSettings extends PreferenceFragment implements
             mSwapbuttons.setChecked(FileUtils.getFileValueAsBoolean(SWAP_BUTTONS_PATH, false));
             mSwapbuttons.setOnPreferenceChangeListener(this);
         } else {
-            getPreferenceScreen().removePreference(findPreference(CATEGORY_FASTCHARGE));
+            getPreferenceScreen().removePreference(findPreference(CATEGORY_SWAP));
         }
     }
 
