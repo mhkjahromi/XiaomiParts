@@ -127,10 +127,10 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="button_swap"
+        android:key="swapbuttons"
         android:title="@string/buttons_title" >
         <org.lineageos.settings.device.preferences.SecureSettingSwitchPreference
-            android:key="buttonswap"
+            android:key="swapbuttons"
             android:defaultValue="false"
             android:title="@string/swapbuttons_title"
             android:summary="@string/swapbuttons_summary" />

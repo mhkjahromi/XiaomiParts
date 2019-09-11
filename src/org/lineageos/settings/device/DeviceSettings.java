@@ -30,7 +30,7 @@ import org.lineageos.settings.device.preferences.SecureSettingSwitchPreference;
 import org.lineageos.settings.device.preferences.VibrationSeekBarPreference;
 
 public class DeviceSettings extends PreferenceFragment implements
-        Preference.OnPreferenceChangeListener {w
+        Preference.OnPreferenceChangeListener {
 
     public static final String PREF_TORCH_BRIGHTNESS = "torch_brightness";
     public static final String TORCH_1_BRIGHTNESS_PATH = "/sys/devices/soc/400f000.qcom," +
