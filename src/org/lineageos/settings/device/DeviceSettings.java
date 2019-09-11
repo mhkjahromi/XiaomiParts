@@ -62,7 +62,7 @@ public class DeviceSettings extends PreferenceFragment implements
 
     public static final String CATEGORY_FASTCHARGE = "usb_fastcharge";
     public static final String PREF_USB_FASTCHARGE = "fastcharge";
-    public static final String USB_FASTCHARGE_PATH = "/sys/kernel/fast_charge/force_fast_charge";
+    public static final String USB_FASTCHARGE_PATH = "/proc/touchpanel/reversed_keys_enable";
 
     public static final String DEVICE_DOZE_PACKAGE_NAME = "org.lineageos.settings.doze";
 

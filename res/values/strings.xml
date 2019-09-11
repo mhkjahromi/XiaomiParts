@@ -125,9 +125,9 @@
     <string name="preset_hybrid_mamba">Hybrid Mamba</string>
 
     <!-- usb fastcharge -->
-    <string name="usb_fastcharge_title">USB Fastcharge</string>
-    <string name="fastcharge_title">Enable USB Fastcharge</string>
-    <string name="fastcharge_summary">Use fastcharge when connected to a computer via usb port</string>
+    <string name="usb_fastcharge_title">Buttons</string>
+    <string name="fastcharge_title">Swap buttons</string>
+    <string name="fastcharge_summary">Swap the order of recents and back buttons</string>
 
     <!-- menu -->
     <string name="kcal_presets" translatable="false">@string/presets_dialog_title</string>
