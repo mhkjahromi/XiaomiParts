@@ -137,9 +137,9 @@ public class DeviceSettings extends PreferenceFragment implements
             getPreferenceScreen().removePreference(findPreference(CATEGORY_SWAPBUTTONS));
         }
 		
-        if (FileUtils.fileWritable(FP_WAKEUP_PATH_PATH)) {
+        if (FileUtils.fileWritable(FP_WAKEUP_PATH)) {
             mFpwakeup = (SecureSettingSwitchPreference) findPreference(PREF_FP_WAKEUP);
-            mFpwakeup.setChecked(FileUtils.getFileValueAsBoolean(FP_WAKEUP_PATH_PATH, false));
+            mFpwakeup.setChecked(FileUtils.getFileValueAsBoolean(FP_WAKEUP_PATH, false));
             mFpwakeup.setOnPreferenceChangeListener(this);
         } else {
             getPreferenceScreen().removePreference(findPreference(CATEGORY_FPWAKEUP));
