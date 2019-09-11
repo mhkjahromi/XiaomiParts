@@ -48,33 +48,8 @@
     <string name="spectrum_balance">Balance</string>
     <string name="spectrum_extreme_battery">Extreme Battery</string>
 
-    <!-- FP Actions -->
-    <string name="fp_title">Fingerprint</string>
-    <string name="fpaction_enabled">Enable custom fingerprint actions</string>
-    <string name="fpshutter_summary">Trigger the camera if it is active</string>
-    <string name="fp_shutter">Fingerprint Shutter</string>
-    <string name="fpaction_dialogTitle">Action</string>
-    <string name="fpaction_summary">Choose Action</string>
-    <string name="fpaction_title">Fingerprint Actions</string>
-    <string name="fpaction_up_title">Swipe Up</string>
-    <string name="fpaction_down_title">Swipe Down</string>
-    <string name="fpaction_left_title">Swipe left</string>
-    <string name="fpaction_right_title">Swipe right</string>
-
-    <!-- Values for FP Actions -->
-    <string name="fpaction_none">None</string>
-    <string name="fpaction_expand_np">Expand Notification Panel</string>
-    <string name="fpaction_expand_qs">Expand QS</string>
-    <string name="fpaction_assistant">Assistant</string>
-    <string name="fpaction_home">Home</string>
-    <string name="fpaction_recent_apps">Recent Apps</string>
-    <string name="fpaction_media_next">Media Next</string>
-    <string name="fpaction_media_play_pause">Media Play/Pause</string>
-    <string name="fpaction_media_previous">Media Previous</string>
-
-    <string name="audio_title">Audio</string>
-
     <!-- Dirac settings -->
+    <string name="audio_title">Audio</string>
     <string name="dirac_title">Mi Sound Enhancer</string>
     <string name="dirac_summary">Optimize audio quality</string>
     <string name="dirac_headset_title">Choose headphones type</string>

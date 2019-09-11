@@ -17,7 +17,6 @@
     package="org.lineageos.settings.device"
     android:sharedUserId="android.uid.system">
 
-    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
@@ -87,7 +86,6 @@
             </intent-filter>
         </service>
 
-        <service android:name=".StartAction" />
         <service
             android:name=".DiracService"
             android:enabled="true"

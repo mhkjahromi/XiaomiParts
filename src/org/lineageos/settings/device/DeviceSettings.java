@@ -32,14 +32,6 @@ import org.lineageos.settings.device.preferences.VibrationSeekBarPreference;
 public class DeviceSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    public static final String CATEGORY_FP = "fingerprint";
-    public static final String PREF_ENABLE_FPACTION = "fpaction_enabled";
-    public static final String PREF_FP_SHUTTER = "fp_shutter";
-    public static final String PREF_FPACTION_UP = "fpaction_up";
-    public static final String PREF_FPACTION_DOWN = "fpaction_down";
-    public static final String PREF_FPACTION_LEFT = "fpaction_left";
-    public static final String PREF_FPACTION_RIGHT = "fpaction_right";
-
     public static final String PREF_TORCH_BRIGHTNESS = "torch_brightness";
     public static final String TORCH_1_BRIGHTNESS_PATH = "/sys/devices/soc/800f000.qcom," +
             "spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d300/leds/led:torch_0/max_brightness";
@@ -82,12 +74,6 @@ public class DeviceSettings extends PreferenceFragment implements
 
     private SecureSettingSwitchPreference mEnableHAL3;
     private SecureSettingSwitchPreference mEnableEIS;
-    private SecureSettingSwitchPreference mEnableFpAction;
-    private SecureSettingSwitchPreference mFpShutter;
-    private SecureSettingListPreference mFpActionUp;
-    private SecureSettingListPreference mFpActionDown;
-    private SecureSettingListPreference mFpActionLeft;
-    private SecureSettingListPreference mFpActionRight;
     private SecureSettingCustomSeekBarPreference mTorchBrightness;
     private VibrationSeekBarPreference mVibrationStrength;
     private Preference mKcal;
@@ -112,36 +98,6 @@ public class DeviceSettings extends PreferenceFragment implements
         mEnableEIS = (SecureSettingSwitchPreference) findPreference(PREF_ENABLE_EIS);
         mEnableEIS.setChecked(FileUtils.getProp(EIS_SYSTEM_PROPERTY, false));
         mEnableEIS.setOnPreferenceChangeListener(this);
-
-        mEnableFpAction = (SecureSettingSwitchPreference) findPreference(PREF_ENABLE_FPACTION);
-        mEnableFpAction.setOnPreferenceChangeListener(this);
-
-        mFpShutter = (SecureSettingSwitchPreference) findPreference(PREF_FP_SHUTTER);
-        mFpShutter.setOnPreferenceChangeListener(this);
-
-        mFpActionUp = (SecureSettingListPreference) findPreference(PREF_FPACTION_UP);
-        mFpActionUp.setSummary(mFpActionUp.getEntry());
-        mFpActionUp.setOnPreferenceChangeListener(this);
-
-        mFpActionDown = (SecureSettingListPreference) findPreference(PREF_FPACTION_DOWN);
-        mFpActionDown.setSummary(mFpActionDown.getEntry());
-        mFpActionDown.setOnPreferenceChangeListener(this);
-
-        mFpActionLeft = (SecureSettingListPreference) findPreference(PREF_FPACTION_LEFT);
-        mFpActionLeft.setSummary(mFpActionLeft.getEntry());
-        mFpActionLeft.setOnPreferenceChangeListener(this);
-
-        mFpActionRight = (SecureSettingListPreference) findPreference(PREF_FPACTION_RIGHT);
-        mFpActionRight.setSummary(mFpActionRight.getEntry());
-        mFpActionRight.setOnPreferenceChangeListener(this);
-
-        if (device.equals("clover")) {
-            PreferenceCategory fpCategory = (PreferenceCategory) findPreference(CATEGORY_FP);
-            fpCategory.removePreference(mFpActionUp);
-            fpCategory.removePreference(mFpActionLeft);
-            fpCategory.removePreference(mFpActionRight);
-            mFpActionDown.setTitle(R.string.fpaction_title);
-        }
 
         mTorchBrightness = (SecureSettingCustomSeekBarPreference) findPreference(PREF_TORCH_BRIGHTNESS);
         mTorchBrightness.setEnabled(FileUtils.fileWritable(TORCH_1_BRIGHTNESS_PATH) &&
@@ -213,26 +169,6 @@ public class DeviceSettings extends PreferenceFragment implements
 
             case PREF_ENABLE_EIS:
                 FileUtils.setProp(EIS_SYSTEM_PROPERTY, (Boolean) value);
-                break;
-
-            case PREF_FPACTION_UP:
-                mFpActionUp.setValue((String) value);
-                mFpActionUp.setSummary(mFpActionUp.getEntry());
-                break;
-
-            case PREF_FPACTION_DOWN:
-                mFpActionDown.setValue((String) value);
-                mFpActionDown.setSummary(mFpActionDown.getEntry());
-                break;
-
-            case PREF_FPACTION_LEFT:
-                mFpActionLeft.setValue((String) value);
-                mFpActionLeft.setSummary(mFpActionLeft.getEntry());
-                break;
-
-            case PREF_FPACTION_RIGHT:
-                mFpActionRight.setValue((String) value);
-                mFpActionRight.setSummary(mFpActionRight.getEntry());
                 break;
 
             case PREF_TORCH_BRIGHTNESS:
