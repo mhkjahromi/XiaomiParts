@@ -56,9 +56,9 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String PREF_HEADSET = "dirac_headset_pref";
     public static final String PREF_PRESET = "dirac_preset_pref";
 
-    public static final String CATEGORY_FASTCHARGE = "usb_fastcharge";
-    public static final String PREF_USB_FASTCHARGE = "fastcharge";
-    public static final String USB_FASTCHARGE_PATH = "/proc/touchpanel/reversed_keys_enable";
+    public static final String CATEGORY_SWAPBUTTONS = "buttons";
+    public static final String PREF_BUTTONS = "swapbuttons";
+    public static final String BUTTONS_PATH = "/proc/touchpanel/reversed_keys_enable";
 
     public static final String DEVICE_DOZE_PACKAGE_NAME = "org.lineageos.settings.doze";
 
@@ -69,7 +69,7 @@ public class DeviceSettings extends PreferenceFragment implements
     private SecureSettingSwitchPreference mEnableDirac;
     private SecureSettingListPreference mHeadsetType;
     private SecureSettingListPreference mPreset;
-    private SecureSettingSwitchPreference mFastcharge;
+    private SecureSettingSwitchPreference mSwapbuttons;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -122,12 +122,12 @@ public class DeviceSettings extends PreferenceFragment implements
         mPreset = (SecureSettingListPreference) findPreference(PREF_PRESET);
         mPreset.setOnPreferenceChangeListener(this);
 
-        if (FileUtils.fileWritable(USB_FASTCHARGE_PATH)) {
-            mFastcharge = (SecureSettingSwitchPreference) findPreference(PREF_USB_FASTCHARGE);
-            mFastcharge.setChecked(FileUtils.getFileValueAsBoolean(USB_FASTCHARGE_PATH, false));
-            mFastcharge.setOnPreferenceChangeListener(this);
+        if (FileUtils.fileWritable(BUTTONS_PATH)) {
+            mSwapbuttons = (SecureSettingSwitchPreference) findPreference(PREF_BUTTONS);
+            mSwapbuttons.setChecked(FileUtils.getFileValueAsBoolean(BUTTONS_PATH, false));
+            mSwapbuttons.setOnPreferenceChangeListener(this);
         } else {
-            getPreferenceScreen().removePreference(findPreference(CATEGORY_FASTCHARGE));
+            getPreferenceScreen().removePreference(findPreference(CATEGORY_SWAPBUTTONS));
         }
     }
 
@@ -178,8 +178,8 @@ public class DeviceSettings extends PreferenceFragment implements
                 }
                 break;
 
-            case PREF_USB_FASTCHARGE:
-                FileUtils.setValue(USB_FASTCHARGE_PATH, (boolean) value);
+            case PREF_BUTTONS:
+                FileUtils.setValue(BUTTONS_PATH_PATH, (boolean) value);
                 break;
 
             default:

@@ -113,12 +113,12 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="usb_fastcharge"
-        android:title="@string/usb_fastcharge_title" >
+        android:key="buttons"
+        android:title="@string/buttons_title" >
         <org.lineageos.settings.device.preferences.SecureSettingSwitchPreference
-            android:key="fastcharge"
+            android:key="swapbuttons"
             android:defaultValue="false"
-            android:title="@string/fastcharge_title"
-            android:summary="@string/fastcharge_summary" />
+            android:title="@string/swapbuttons_title"
+            android:summary="@string/swapbuttons_summary" />
     </PreferenceCategory>
 </PreferenceScreen>

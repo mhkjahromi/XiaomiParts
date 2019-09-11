@@ -44,8 +44,9 @@
     <string name="spectrum_balance">Balance</string>
     <string name="spectrum_extreme_battery">Extreme Battery</string>
 
-    <!-- Dirac settings -->
     <string name="audio_title">Audio</string>
+	
+    <!-- Dirac settings -->
     <string name="dirac_title">Mi Sound Enhancer</string>
     <string name="dirac_summary">Optimize audio quality</string>
     <string name="dirac_headset_title">Choose headphones type</string>
@@ -120,10 +121,10 @@
     <string name="preset_warm_amoled">Warm Amoled</string>
     <string name="preset_hybrid_mamba">Hybrid Mamba</string>
 
-    <!-- usb fastcharge -->
-    <string name="usb_fastcharge_title">Buttons</string>
-    <string name="fastcharge_title">Swap buttons</string>
-    <string name="fastcharge_summary">Swap the order of recents and back buttons</string>
+    <!-- Buttons -->
+    <string name="buttons_title">Buttons</string>
+    <string name="swapbuttons_title">Swap buttons</string>
+    <string name="swapbuttons_summary">Swap the order of recents and back buttons</string>
 
     <!-- menu -->
     <string name="kcal_presets" translatable="false">@string/presets_dialog_title</string>
