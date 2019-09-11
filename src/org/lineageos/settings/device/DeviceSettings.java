@@ -56,10 +56,16 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String PREF_HEADSET = "dirac_headset_pref";
     public static final String PREF_PRESET = "dirac_preset_pref";
 
+	// buttons
     public static final String CATEGORY_SWAPBUTTONS = "buttons";
     public static final String PREF_BUTTONS = "swapbuttons";
     public static final String BUTTONS_PATH = "/proc/touchpanel/reversed_keys_enable";
 
+	//fpactions
+	public static final String CATEGORY_FPWAKEUP = "fp_wakeup";
+    public static final String PREF_FP_WAKEUP = "fpwakeup";
+    public static final String FP_WAKEUP_PATH = "/sys/devices/soc/soc:fpc_fpc1020/enable_wakeup";
+	
     public static final String DEVICE_DOZE_PACKAGE_NAME = "org.lineageos.settings.doze";
 
     private SecureSettingCustomSeekBarPreference mTorchBrightness;
@@ -70,6 +76,7 @@ public class DeviceSettings extends PreferenceFragment implements
     private SecureSettingListPreference mHeadsetType;
     private SecureSettingListPreference mPreset;
     private SecureSettingSwitchPreference mSwapbuttons;
+    private SecureSettingSwitchPreference mFpwakeup;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -129,6 +136,14 @@ public class DeviceSettings extends PreferenceFragment implements
         } else {
             getPreferenceScreen().removePreference(findPreference(CATEGORY_SWAPBUTTONS));
         }
+		
+        if (FileUtils.fileWritable(FP_WAKEUP_PATH_PATH)) {
+            mFpwakeup = (SecureSettingSwitchPreference) findPreference(PREF_FP_WAKEUP);
+            mFpwakeup.setChecked(FileUtils.getFileValueAsBoolean(FP_WAKEUP_PATH_PATH, false));
+            mFpwakeup.setOnPreferenceChangeListener(this);
+        } else {
+            getPreferenceScreen().removePreference(findPreference(CATEGORY_FPWAKEUP));
+        }
     }
 
     @Override
@@ -180,6 +195,10 @@ public class DeviceSettings extends PreferenceFragment implements
 
             case PREF_BUTTONS:
                 FileUtils.setValue(BUTTONS_PATH, (boolean) value);
+                break;
+				
+            case PREF_FP_WAKEUP:
+                FileUtils.setValue(FP_WAKEUP_PATH, (boolean) value);
                 break;
 
             default:

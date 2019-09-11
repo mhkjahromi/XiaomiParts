@@ -63,6 +63,8 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
                 context.getContentResolver(), DeviceSettings.PREF_VIBRATION_STRENGTH, 80) / 100.0 * (DeviceSettings.MAX_VIBRATION - DeviceSettings.MIN_VIBRATION) + DeviceSettings.MIN_VIBRATION);
         FileUtils.setValue(DeviceSettings.BUTTONS_PATH, Settings.Secure.getInt(context.getContentResolver(),
                 DeviceSettings.PREF_BUTTONS, 0));
+        FileUtils.setValue(DeviceSettings.FP_WAKEUP_PATH, Settings.Secure.getInt(context.getContentResolver(),
+                DeviceSettings.PREF_FP_WAKEUP, 0));
         context.startService(new Intent(context, DiracService.class));
     }
 }
