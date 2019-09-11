@@ -42,8 +42,8 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String VIBRATION_STRENGTH_PATH = "/sys/devices/timed_output/vibrator/vtg_level";
 
     // value of vtg_min and vtg_max
-    public static final int MIN_VIBRATION = 116;
-    public static final int MAX_VIBRATION = 3596;
+    public static final int MIN_VIBRATION = 12;
+    public static final int MAX_VIBRATION = 127;
 
     public static final String CATEGORY_DISPLAY = "display";
     public static final String PREF_DEVICE_DOZE = "device_doze";
