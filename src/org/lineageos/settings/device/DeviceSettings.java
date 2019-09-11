@@ -55,10 +55,6 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String PREF_ENABLE_DIRAC = "dirac_enabled";
     public static final String PREF_HEADSET = "dirac_headset_pref";
     public static final String PREF_PRESET = "dirac_preset_pref";
-    public static final String PREF_HEADPHONE_GAIN = "headphone_gain";
-    public static final String HEADPHONE_GAIN_PATH = "/sys/kernel/sound_control/headphone_gain";
-    public static final String PREF_MICROPHONE_GAIN = "microphone_gain";
-    public static final String MICROPHONE_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
 
     public static final String CATEGORY_FASTCHARGE = "usb_fastcharge";
     public static final String PREF_USB_FASTCHARGE = "fastcharge";
@@ -73,8 +69,6 @@ public class DeviceSettings extends PreferenceFragment implements
     private SecureSettingSwitchPreference mEnableDirac;
     private SecureSettingListPreference mHeadsetType;
     private SecureSettingListPreference mPreset;
-    private SecureSettingCustomSeekBarPreference mHeadphoneGain;
-    private SecureSettingCustomSeekBarPreference mMicrophoneGain;
     private SecureSettingSwitchPreference mFastcharge;
 
     @Override
@@ -127,12 +121,6 @@ public class DeviceSettings extends PreferenceFragment implements
 
         mPreset = (SecureSettingListPreference) findPreference(PREF_PRESET);
         mPreset.setOnPreferenceChangeListener(this);
-
-        mHeadphoneGain = (SecureSettingCustomSeekBarPreference) findPreference(PREF_HEADPHONE_GAIN);
-        mHeadphoneGain.setOnPreferenceChangeListener(this);
-
-        mMicrophoneGain = (SecureSettingCustomSeekBarPreference) findPreference(PREF_MICROPHONE_GAIN);
-        mMicrophoneGain.setOnPreferenceChangeListener(this);
 
         if (FileUtils.fileWritable(USB_FASTCHARGE_PATH)) {
             mFastcharge = (SecureSettingSwitchPreference) findPreference(PREF_USB_FASTCHARGE);
@@ -188,14 +176,6 @@ public class DeviceSettings extends PreferenceFragment implements
                     getContext().startService(new Intent(getContext(), DiracService.class));
                     DiracService.sDiracUtils.setLevel(String.valueOf(value));
                 }
-                break;
-
-            case PREF_HEADPHONE_GAIN:
-                FileUtils.setValue(HEADPHONE_GAIN_PATH, value + " " + value);
-                break;
-
-            case PREF_MICROPHONE_GAIN:
-                FileUtils.setValue(MICROPHONE_GAIN_PATH, (int) value);
                 break;
 
             case PREF_USB_FASTCHARGE:
