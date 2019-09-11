@@ -179,7 +179,7 @@ public class DeviceSettings extends PreferenceFragment implements
                 break;
 
             case PREF_BUTTONS:
-                FileUtils.setValue(BUTTONS_PATH_PATH, (boolean) value);
+                FileUtils.setValue(BUTTONS_PATH, (boolean) value);
                 break;
 
             default:
