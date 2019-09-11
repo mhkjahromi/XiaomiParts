@@ -65,6 +65,8 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
                 DeviceSettings.PREF_BUTTONS, 0));
         FileUtils.setValue(DeviceSettings.FP_WAKEUP_PATH, Settings.Secure.getInt(context.getContentResolver(),
                 DeviceSettings.PREF_FP_WAKEUP, 0));
+        FileUtils.setValue(DeviceSettings.FP_HOME_PATH, Settings.Secure.getInt(context.getContentResolver(),
+                DeviceSettings.PREF_FP_HOME, 0));
         context.startService(new Intent(context, DiracService.class));
     }
 }

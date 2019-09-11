@@ -65,6 +65,9 @@ public class DeviceSettings extends PreferenceFragment implements
 	public static final String CATEGORY_FPWAKEUP = "fp_wakeup";
     public static final String PREF_FP_WAKEUP = "fpwakeup";
     public static final String FP_WAKEUP_PATH = "/sys/devices/soc/soc:fpc_fpc1020/enable_wakeup";
+	public static final String CATEGORY_FPHOME = "fp_home";
+    public static final String PREF_FP_HOME = "fphome";
+    public static final String FP_HOME_PATH = "/sys/devices/soc/soc:fpc_fpc1020/enable_key_events";
 	
     public static final String DEVICE_DOZE_PACKAGE_NAME = "org.lineageos.settings.doze";
 
@@ -77,6 +80,7 @@ public class DeviceSettings extends PreferenceFragment implements
     private SecureSettingListPreference mPreset;
     private SecureSettingSwitchPreference mSwapbuttons;
     private SecureSettingSwitchPreference mFpwakeup;
+    private SecureSettingSwitchPreference mFphome;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -144,6 +148,14 @@ public class DeviceSettings extends PreferenceFragment implements
         } else {
             getPreferenceScreen().removePreference(findPreference(CATEGORY_FPWAKEUP));
         }
+		
+        if (FileUtils.fileWritable(FP_HOME_PATH)) {
+            mFphome = (SecureSettingSwitchPreference) findPreference(PREF_FP_HOME);
+            mFphome.setChecked(FileUtils.getFileValueAsBoolean(FP_HOME_PATH, false));
+            mFphome.setOnPreferenceChangeListener(this);
+        } else {
+            getPreferenceScreen().removePreference(findPreference(CATEGORY_FPHOME));
+        }
     }
 
     @Override
@@ -199,6 +211,10 @@ public class DeviceSettings extends PreferenceFragment implements
 				
             case PREF_FP_WAKEUP:
                 FileUtils.setValue(FP_WAKEUP_PATH, (boolean) value);
+                break;
+				
+            case PREF_FP_HOME:
+                FileUtils.setValue(FP_HOME_PATH, (boolean) value);
                 break;
 
             default:
