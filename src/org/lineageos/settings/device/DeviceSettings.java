@@ -39,7 +39,7 @@ public class DeviceSettings extends PreferenceFragment implements
             "spmi/spmi-0/spmi0-03/400f000.qcom,spmi:qcom,pmi8994@3:qcom,leds@d300/leds/led:torch_1/max_brightness";
 
     public static final String PREF_VIBRATION_STRENGTH = "vibration_strength";
-    public static final String VIBRATION_STRENGTH_PATH = "/sys/devices/virtual/timed_output/vibrator/vtg_level";
+    public static final String VIBRATION_STRENGTH_PATH = "/sys/devices/timed_output/vibrator/vtg_level";
 
     // value of vtg_min and vtg_max
     public static final int MIN_VIBRATION = 116;
