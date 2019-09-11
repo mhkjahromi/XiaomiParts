@@ -15,6 +15,42 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <PreferenceCategory
+        android:key="buttons"
+        android:title="@string/buttons_title" >
+        <org.lineageos.settings.device.preferences.SecureSettingSwitchPreference
+            android:key="swapbuttons"
+            android:defaultValue="true"
+            android:title="@string/swapbuttons_title"
+            android:summary="@string/swapbuttons_summary" />
+    </PreferenceCategory>
+	
+	<PreferenceCategory
+        android:key="fpactions"
+        android:title="@string/fp_title" >
+        <org.lineageos.settings.device.preferences.SecureSettingSwitchPreference
+            android:key="fpwakeup"
+            android:defaultValue="false"
+            android:title="@string/fp_wakeup_title"
+            android:summary="@string/fp_wakeup_summary" />
+			
+        <org.lineageos.settings.device.preferences.SecureSettingSwitchPreference
+            android:key="fphome"
+            android:defaultValue="false"
+            android:title="@string/fp_home_title"
+            android:summary="@string/fp_home_summary" />
+	</PreferenceCategory>
+	
+	 <PreferenceCategory
+        android:key="gestures"
+        android:title="@string/gestures_title" >
+        <org.lineageos.settings.device.preferences.SecureSettingSwitchPreference
+            android:key="dt2w"
+            android:defaultValue="false"
+            android:title="@string/dt2w_title"
+            android:summary="@string/dt2w_summary" />
+    </PreferenceCategory>
+	
+    <PreferenceCategory
         android:key="torch"
         android:title="@string/torch_title">
 
@@ -111,30 +147,4 @@
             android:title="@string/dirac_preset_title" />
 
     </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="buttons"
-        android:title="@string/buttons_title" >
-        <org.lineageos.settings.device.preferences.SecureSettingSwitchPreference
-            android:key="swapbuttons"
-            android:defaultValue="false"
-            android:title="@string/swapbuttons_title"
-            android:summary="@string/swapbuttons_summary" />
-    </PreferenceCategory>
-	
-	<PreferenceCategory
-        android:key="fpactions"
-        android:title="@string/fp_title" >
-        <org.lineageos.settings.device.preferences.SecureSettingSwitchPreference
-            android:key="fpwakeup"
-            android:defaultValue="false"
-            android:title="@string/fp_wakeup_title"
-            android:summary="@string/fp_wakeup_summary" />
-			
-        <org.lineageos.settings.device.preferences.SecureSettingSwitchPreference
-            android:key="fphome"
-            android:defaultValue="false"
-            android:title="@string/fp_home_title"
-            android:summary="@string/fp_home_summary" />
-	</PreferenceCategory>
 </PreferenceScreen>

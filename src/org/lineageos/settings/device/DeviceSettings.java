@@ -61,13 +61,18 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String PREF_BUTTONS = "swapbuttons";
     public static final String BUTTONS_PATH = "/proc/touchpanel/reversed_keys_enable";
 
-	//fpactions
+	// fpactions
 	public static final String CATEGORY_FPWAKEUP = "fp_wakeup";
     public static final String PREF_FP_WAKEUP = "fpwakeup";
     public static final String FP_WAKEUP_PATH = "/sys/devices/soc/soc:fpc_fpc1020/enable_wakeup";
 	public static final String CATEGORY_FPHOME = "fp_home";
     public static final String PREF_FP_HOME = "fphome";
     public static final String FP_HOME_PATH = "/sys/devices/soc/soc:fpc_fpc1020/enable_key_events";
+	
+	//gestures
+    public static final String CATEGORY_DT2W = "dt2_w";
+    public static final String PREF_DT2_W = "dt2w";
+    public static final String DT2_W_PATH = "/proc/touchpanel/double_tap_enable";
 	
     public static final String DEVICE_DOZE_PACKAGE_NAME = "org.lineageos.settings.doze";
 
@@ -81,6 +86,7 @@ public class DeviceSettings extends PreferenceFragment implements
     private SecureSettingSwitchPreference mSwapbuttons;
     private SecureSettingSwitchPreference mFpwakeup;
     private SecureSettingSwitchPreference mFphome;
+    private SecureSettingSwitchPreference mDt2w;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -156,6 +162,14 @@ public class DeviceSettings extends PreferenceFragment implements
         } else {
             getPreferenceScreen().removePreference(findPreference(CATEGORY_FPHOME));
         }
+		
+        if (FileUtils.fileWritable(DT2_W_PATH)) {
+            mDt2w = (SecureSettingSwitchPreference) findPreference(PREF_DT2_W);
+            mDt2w.setChecked(FileUtils.getFileValueAsBoolean(DT2_W_PATH, false));
+            mDt2w.setOnPreferenceChangeListener(this);
+        } else {
+            getPreferenceScreen().removePreference(findPreference(CATEGORY_DT2W));
+        }
     }
 
     @Override
@@ -215,6 +229,10 @@ public class DeviceSettings extends PreferenceFragment implements
 				
             case PREF_FP_HOME:
                 FileUtils.setValue(FP_HOME_PATH, (boolean) value);
+                break;
+				
+            case PREF_DT2_W:
+                FileUtils.setValue(DT2_W_PATH, (boolean) value);
                 break;
 
             default:
