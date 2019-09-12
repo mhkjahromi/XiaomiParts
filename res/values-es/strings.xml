@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2019 Mohammad Hasan Keramat Jahromi m.h.k.jahromi@gmail.com
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="advanced_settings">Xiaomi Parts</string>
+    <string name="advanced_settings_summary">Extra Settings</string>
+
+    <string name="display_title">Pantalla</string>
+
+    <!-- KCal -->
+    <string name="device_kcal_title">Calibración de color de la pantalla</string>
+
+    <!-- Ambient Display -->
+    <string name="ambient_display_xiaomi">Xiaomi Doze</string>
+    <string name="advanced_doze_summary">Ambient Display</string>
+
+    <string name="torch_title">Linterna</string>
+    <string name="torch_brightness_title">Brillo</string>
+    <string name="vibration_title">Retroalimentación táctil</string>
+    <string name="vibration_strength_title">Potencia</string>
+
+    <!-- Spectrum Profiles -->
+    <string name="spectrum_profile_title">Rendimiento</string>
+    <string name="spectrum_title">Ajustes de rendimiento</string>
+    <string name="spectrum_summary">Elige tus ajustes de rendimiento</string>
+    <string name="spectrum_dialogTitle">Elige tus ajustes de rendimiento</string>
+
+    <!-- Values for Spectrum Presets -->
+    <string name="spectrum_performance">Rendimiento</string>
+    <string name="spectrum_battery">Batería</string>
+    <string name="spectrum_gaming">Gaming</string>
+    <string name="spectrum_balance">Equilibrado</string>
+    <string name="spectrum_extreme_battery">Batería extrema</string>
+
+    <string name="audio_title">Sonido</string>
+	
+    <!-- Dirac settings -->
+    <string name="dirac_title">Mi Sound Enhancer</string>
+    <string name="dirac_summary">Optimizar calidad del sonido</string>
+    <string name="dirac_headset_title">Elegir tipo de auriculares</string>
+    <string name="dirac_preset_title">Elegir un preajuste</string>
+
+    <!-- Dirac settings: Headset types -->
+    <string name="dirac_headset_default">Predeteminado</string>
+    <string name="dirac_headset_earbuds">Mi Earbuds</string>
+    <string name="dirac_headset_in_ear_2013">Mi In-Ear (2013)</string>
+    <string name="dirac_headset_piston_1">Mi Piston-1</string>
+    <string name="dirac_headset_general">General</string>
+    <string name="dirac_headset_general_inear">General In-Ear</string>
+    <string name="dirac_headset_piston_basic">Basic Edition</string>
+    <string name="dirac_headset_piston_2">Mi Piston-2</string>
+    <string name="dirac_headset_piston_standard">Standard Edition</string>
+    <string name="dirac_headset_headphone">Mi Headphones</string>
+    <string name="dirac_headset_piston_youth">Youth Edition</string>
+    <string name="dirac_headset_piston_color">Color Edition</string>
+    <string name="dirac_headset_in_ear">Mi In-Ear</string>
+    <string name="dirac_headset_capsule">Mi Capsule</string>
+    <string name="dirac_headset_in_ear_pro">Mi In-Ear Pro</string>
+    <string name="dirac_headset_comfort">Mi Comfort</string>
+    <string name="dirac_headset_reduction_noise">Mi Noise Cancelling Type-C</string>
+    <string name="dirac_headset_cancelling">Mi Noise Cancelling 3.5mm</string>
+    <string name="dirac_headset_half_in_ear">Mi Half In-Ear</string>
+    <string name="dirac_headset_in_ear2">Mi In-Ear 2</string>
+    <string name="dirac_headset_earphone_basic">Mi Earphones Basic</string>
+    <string name="dirac_headset_earphone">Mi Earphones</string>
+
+    <!-- Dirac settings: Equalizer presets -->
+    <string name="dirac_preset_default">Predeterminado</string>
+    <string name="dirac_preset_rock">Rock</string>
+    <string name="dirac_preset_jazz">Jazz</string>
+    <string name="dirac_preset_pop">Pop</string>
+    <string name="dirac_preset_classical">Clásica</string>
+    <string name="dirac_preset_hiphop">Hip Hop</string>
+    <string name="dirac_preset_blues">Blues</string>
+    <string name="dirac_preset_electronic">Electronica</string>
+    <string name="dirac_preset_country">Country</string>
+    <string name="dirac_preset_dance">Dance</string>
+    <string name="dirac_preset_metal">Metal</string>
+
+    <!-- kcal -->
+    <string name="advanced_settings_kcal">Calibración de color de la pantalla</string>
+    <string name="cat_colormanagement">Ajustes de color</string>
+    <string name="cat_calibration">Calibración de pantalla</string>
+
+    <string name="kcal_enabled">Encendido</string>
+    <string name="kcal_disabled">Apagado</string>
+    <string name="set_on_boot">Aplicar al arrancar</string>
+    <string name="color_red">Rojo</string>
+    <string name="color_green">Verde</string>
+    <string name="color_blue">Azul</string>
+    <string name="color_minimum">Mínimo</string>
+    <string name="saturation">Saturación</string>
+    <string name="value">Valor</string>
+    <string name="contrast">Contraste</string>
+    <string name="hue">Hue</string>
+    <string name="grayscale">Escala de grises</string>
+
+    <string name="presets_dialog_title">Elegir preajuste</string>
+    <!-- Presets -->
+    <string name="preset_default">Predeterminado</string>
+    <string name="preset_version_1">Versión 1</string>
+    <string name="preset_version_2">Versión 2</string>
+    <string name="preset_version_3">Versión 3</string>
+    <string name="preset_triluminous">Triluminos</string>
+    <string name="preset_deep_black_white">Negro y Blanco Profundos</string>
+    <string name="preset_deep_natural">Natural Profundo</string>
+    <string name="preset_cool_amoled">Amoled Frío</string>
+    <string name="preset_extreme_amoled">Amoled Extremo</string>
+    <string name="preset_warm_amoled">Amoled Cálido</string>
+    <string name="preset_hybrid_mamba">Mamba Híbrida</string>
+
+    <!-- Buttons -->
+    <string name="buttons_title">Botones</string>
+    <string name="swapbuttons_title">Intercambiar botones</string>
+    <string name="swapbuttons_summary">Cambiar el orden de los botones recientes y atrás</string>
+
+	<!-- Fp Actions -->
+    <string name="fp_title">Funciones del lector de huella</string>
+    <string name="fp_wakeup_title">Lector de huella despierta el dispositivo</string>
+    <string name="fp_wakeup_summary">Permitir que el lector de huella despierte el dispositivo cuando la pantalla esta apagada</string>
+    <string name="fp_home_title">Lector de huella como botón</string>
+    <string name="fp_home_summary">Usar lector de huella como botón customizable</string>
+	
+    <!-- Gestures -->
+    <string name="gestures_title">Gestos</string>
+    <string name="dt2w_title">Doble toque para despertar</string>
+    <string name="dt2w_summary">Doble toque para despertar el dispositivo</string>
+	
+    <!-- menu -->
+    <string name="kcal_presets" translatable="false">@string/presets_dialog_title</string>
+    <string name="kcal_reset">Resetear</string>
+
+    <!-- CustomSeekBarPreference -->
+    <string name="edit_value">Elija nuevo valor</string>
+    <string name="default_value">Valor predeterminado</string>
+    <string name="edit_hint">Valor entre %1$d y %2$d</string>
+</resources>
