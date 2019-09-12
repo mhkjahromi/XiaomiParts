@@ -50,7 +50,7 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String QC_LIMIT_PATH = "/sys/devices/soc/400f000.qcom,spmi/spmi-0/spmi0-02/400f000.qcom,spmi:qcom,pmi8994@2:qcom,qpnp-smbcharger/power_supply/battery/constant_charge_current_max";
 
     // qc_limit min and max value
-    public static final int MIN_QC = 1600000;
+    public static final int MIN_QC = 1000000;
     public static final int MAX_QC = 3000000;
 	
     public static final String CATEGORY_DISPLAY = "display";
