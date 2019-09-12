@@ -15,7 +15,7 @@
 -->
 <resources>
     <string name="advanced_settings">تنظیمات شیائومی</string>
-    <string name="advanced_settings_summary">تنظیمات اضافی</string>
+    <string name="advanced_settings_summary">تنظیمات پیشرفته</string>
 
     <string name="display_title">صفحه نمایش</string>
 
@@ -32,17 +32,17 @@
     <string name="vibration_strength_title">لرزش</string>
 
     <!-- Spectrum Profiles -->
-    <string name="spectrum_profile_title">قدرت گوشی</string>
-    <string name="spectrum_title">تنظیمات قدرت گوشی</string>
-    <string name="spectrum_summary">حالت قدرت گوشی را انتخاب کنید</string>
-    <string name="spectrum_dialogTitle">حالت قدرت گوشی را انتخاب کنید</string>
+    <string name="spectrum_profile_title">پردازشگر</string>
+    <string name="spectrum_title">تنظیمات ناوبری پردازشگر</string>
+    <string name="spectrum_summary">حالت ناوبری پردازشگر را انتخاب کنید</string>
+    <string name="spectrum_dialogTitle">حالت ناوبری پردازشگر را انتخاب کنید</string>
 
     <!-- Values for Spectrum Presets -->
-    <string name="spectrum_performance">قوی</string>
-    <string name="spectrum_battery">باتری</string>
-    <string name="spectrum_gaming">بازی</string>
-    <string name="spectrum_balance">معتدل</string>
-    <string name="spectrum_extreme_battery">ذخیره بیشتر باتری</string>
+    <string name="spectrum_performance">فدرتمند</string>
+    <string name="spectrum_battery">ذخیره نیرو</string>
+    <string name="spectrum_gaming">گیمینگ</string>
+    <string name="spectrum_balance">عادی</string>
+    <string name="spectrum_extreme_battery">ذخیره بیشتر نیرو</string>
 
     <string name="audio_title">صدا</string>
 	
@@ -92,7 +92,7 @@
     <!-- kcal -->
     <string name="advanced_settings_kcal">تنظیمات رنگ صفحه نمایش</string>
     <string name="cat_colormanagement">تنظیمات رنگ</string>
-    <string name="cat_calibration">تنظیمات صفحه نمایش</string>
+    <string name="cat_calibration">کالیبره کردن صفحه نمایش</string>
 
     <string name="kcal_enabled">روشن</string>
     <string name="kcal_disabled">خاموش</string>
@@ -127,9 +127,9 @@
     <string name="swapbuttons_summary">جای دکمه های بازگشت و برنامه های باز را عوض کنید</string>
 
 	<!-- Fp Actions -->
-    <string name="fp_title">اقدامات حسگر اثرانگشت</string>
-    <string name="fp_wakeup_title">حسگر اثرانگشت تلفن را باز کند</string>
-    <string name="fp_wakeup_summary">اجازه دادن به حسگراثرانگشت برای باز کردن تلفن در زمانی که تلفن قفل است</string>
+    <string name="fp_title">تنظیمات اثرانگشت</string>
+    <string name="fp_wakeup_title">بازکردن قفل با اثرانگشت</string>
+    <string name="fp_wakeup_summary">باز کردن قفل تلفن با اثرانگشت در زمانی که تلفن قفل و صفحه خاموش است</string>
     <string name="fp_home_title">استفاده از حسگراثرانگشت به عنوان دکمه</string>
     <string name="fp_home_summary">از حسگر اثرانگشت به عنوان دکمه استفاده کنید</string>
 	
