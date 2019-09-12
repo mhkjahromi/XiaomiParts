@@ -95,7 +95,7 @@ public class DeviceSettings extends PreferenceFragment implements
     private SecureSettingSwitchPreference mFpwakeup;
     private SecureSettingSwitchPreference mFphome;
     private SecureSettingSwitchPreference mDt2w;
-    private SecureSettingListPreference mQuickCharge;
+    private SecureSettingCustomSeekBarPreference mQuickCharge;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -112,7 +112,7 @@ public class DeviceSettings extends PreferenceFragment implements
         mVibrationStrength.setEnabled(FileUtils.fileWritable(VIBRATION_STRENGTH_PATH));
         mVibrationStrength.setOnPreferenceChangeListener(this);
 
-        mQuickCharge = (SecureSettingListPreference) findPreference(PREF_QC_LIMIT);
+        mQuickCharge = (SecureSettingCustomSeekBarPreference) findPreference(PREF_QC_LIMIT);
         mQuickCharge.setEnabled(FileUtils.fileWritable(QC_LIMIT_PATH));
         mQuickCharge.setOnPreferenceChangeListener(this);
 		
