@@ -140,7 +140,7 @@
 	
 	<!-- QC Limit -->
     <string name="qc_limit_title">Quick Charge Limit [BETA]</string>
-    <string name="qc_limit_summary">Set limit for your charger per Ma</string>
+    <string name="qc_limit_summary">Set limit for your charger per mA</string>
 	
     <!-- menu -->
     <string name="kcal_presets" translatable="false">@string/presets_dialog_title</string>
