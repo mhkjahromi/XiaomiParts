@@ -40,11 +40,19 @@ public class DeviceSettings extends PreferenceFragment implements
 
     public static final String PREF_VIBRATION_STRENGTH = "vibration_strength";
     public static final String VIBRATION_STRENGTH_PATH = "/sys/devices/timed_output/vibrator/vtg_level";
-
+	
     // value of vtg_min and vtg_max
     public static final int MIN_VIBRATION = 12;
     public static final int MAX_VIBRATION = 127;
+	
+	// QC limit
+    public static final String PREF_QC_LIMIT = "qc_limit";
+    public static final String QC_LIMIT_PATH = "/sys/devices/soc/400f000.qcom,spmi/spmi-0/spmi0-02/400f000.qcom,spmi:qcom,pmi8994@2:qcom,qpnp-smbcharger/power_supply/battery/constant_charge_current_max";
 
+    // qc_limit min and max value
+    public static final int MIN_QC = 1000000;
+    public static final int MAX_QC = 3000000;
+	
     public static final String CATEGORY_DISPLAY = "display";
     public static final String PREF_DEVICE_DOZE = "device_doze";
     public static final String PREF_DEVICE_KCAL = "device_kcal";
@@ -87,6 +95,7 @@ public class DeviceSettings extends PreferenceFragment implements
     private SecureSettingSwitchPreference mFpwakeup;
     private SecureSettingSwitchPreference mFphome;
     private SecureSettingSwitchPreference mDt2w;
+    private SecureSettingListPreference mQuickCharge;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -103,6 +112,10 @@ public class DeviceSettings extends PreferenceFragment implements
         mVibrationStrength.setEnabled(FileUtils.fileWritable(VIBRATION_STRENGTH_PATH));
         mVibrationStrength.setOnPreferenceChangeListener(this);
 
+        mQuickCharge = (SecureSettingListPreference) findPreference(PREF_QC_LIMIT);
+        mQuickCharge.setEnabled(FileUtils.fileWritable(QC_LIMIT_PATH));
+        mQuickCharge.setOnPreferenceChangeListener(this);
+		
         PreferenceCategory displayCategory = (PreferenceCategory) findPreference(CATEGORY_DISPLAY);
         if (isAppNotInstalled(DEVICE_DOZE_PACKAGE_NAME)) {
             displayCategory.removePreference(findPreference(PREF_DEVICE_DOZE));
@@ -184,6 +197,11 @@ public class DeviceSettings extends PreferenceFragment implements
             case PREF_VIBRATION_STRENGTH:
                 double vibrationValue = (int) value / 100.0 * (MAX_VIBRATION - MIN_VIBRATION) + MIN_VIBRATION;
                 FileUtils.setValue(VIBRATION_STRENGTH_PATH, vibrationValue);
+                break;
+
+            case PREF_QC_LIMIT:
+                double quickchargeValue = (int) value / 3000.0 * (MAX_QC - MIN_QC) + MIN_QC;
+                FileUtils.setValue(QC_LIMIT_PATH, quickchargeValue);
                 break;
 
             case PREF_SPECTRUM:
