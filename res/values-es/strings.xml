@@ -135,6 +135,10 @@
     <string name="dt2w_title">Doble toque para despertar</string>
     <string name="dt2w_summary">Doble toque para despertar el dispositivo</string>
 	
+	<!-- QC Limit -->
+    <string name="qc_limit_title">Límite de carga rápida [BETA]</string>
+    <string name="qc_limit_summary">Poner límite de mA al cargador</string>
+	
     <!-- menu -->
     <string name="kcal_presets" translatable="false">@string/presets_dialog_title</string>
     <string name="kcal_reset">Resetear</string>
