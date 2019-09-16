@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 The Xiaomi-SDM660 Project
+ * Copyright (C) 2019 Mohammad Hasan Keramat Jahromi m.h.k.jahromi@gmail.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,8 +18,8 @@ package org.lineageos.settings.device.kcal;
 
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.v14.preference.PreferenceFragment;
-import android.support.v7.preference.Preference;
+import androidx.preference.PreferenceFragment;
+import androidx.preference.Preference;
 
 import org.lineageos.settings.device.R;
 import org.lineageos.settings.device.preferences.SecureSettingCustomSeekBarPreference;

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 AICP
+ * Copyright (C) 2019 Mohammad Hasan Keramat Jahromi m.h.k.jahromi@gmail.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 package org.lineageos.settings.device.preferences;
 
 import android.content.Context;
-import android.support.v7.preference.ListPreference;
+import androidx.preference.ListPreference;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 
