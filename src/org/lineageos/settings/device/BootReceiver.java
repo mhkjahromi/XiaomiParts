@@ -63,6 +63,10 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
                 context.getContentResolver(), DeviceSettings.PREF_VIBRATION_STRENGTH, 80) / 100.0 * (DeviceSettings.MAX_VIBRATION - DeviceSettings.MIN_VIBRATION) + DeviceSettings.MIN_VIBRATION);
         FileUtils.setValue(DeviceSettings.QC_LIMIT_PATH, Settings.Secure.getInt(
                 context.getContentResolver(), DeviceSettings.PREF_QC_LIMIT, 2500) / 3000.0 * (DeviceSettings.MAX_QC - DeviceSettings.MIN_QC) + DeviceSettings.MIN_QC);
+        FileUtils.setValue(DeviceSettings.YELLOW_LED_PATH, Settings.Secure.getInt(
+                context.getContentResolver(), DeviceSettings.PREF_YELLOW_LED, 0) / 190.0 * (DeviceSettings.MAX_YL - DeviceSettings.MIN_YL) + DeviceSettings.MIN_YL);
+	        FileUtils.setValue(DeviceSettings.WHITE_LED_PATH, Settings.Secure.getInt(
+                context.getContentResolver(), DeviceSettings.PREF_WHITE_LED, 0) / 190.0 * (DeviceSettings.MAX_WL - DeviceSettings.MIN_WL) + DeviceSettings.MIN_WL);
         FileUtils.setValue(DeviceSettings.BUTTONS_PATH, Settings.Secure.getInt(context.getContentResolver(),
                 DeviceSettings.PREF_BUTTONS, 0));
         FileUtils.setValue(DeviceSettings.FP_WAKEUP_PATH, Settings.Secure.getInt(context.getContentResolver(),
