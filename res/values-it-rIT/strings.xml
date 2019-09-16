@@ -26,8 +26,13 @@
     <string name="ambient_display_xiaomi">Spegnimento Display Xiaomi</string>
     <string name="advanced_doze_summary">Ambient Display</string>
 
+	<!-- Torch -->
     <string name="torch_title">Torcia</string>
-    <string name="torch_brightness_title">Luminosità</string>
+    <string name="torch_brightness_title">Controllo del mixer</string>
+	<string name="yellow_led">LED giallo [BETA]</string>
+	<string name="white_led">LED bianco [BETA]</string>
+	
+	<!-- Vibration -->
     <string name="vibration_title">Feedback Tattico</string>
     <string name="vibration_strength_title">Intensità</string>
 
@@ -81,10 +86,10 @@
     <string name="dirac_preset_rock">Rock</string>
     <string name="dirac_preset_jazz">Jazz</string>
     <string name="dirac_preset_pop">Pop</string>
-    <string name="dirac_preset_classical">Classica</string>
+    <string name="dirac_preset_classical">Classical</string>
     <string name="dirac_preset_hiphop">Hip Hop</string>
     <string name="dirac_preset_blues">Blues</string>
-    <string name="dirac_preset_electronic">Elettronica</string>
+    <string name="dirac_preset_electronic">Electronic</string>
     <string name="dirac_preset_country">Country</string>
     <string name="dirac_preset_dance">Dance</string>
     <string name="dirac_preset_metal">Metal</string>
@@ -95,12 +100,12 @@
     <string name="cat_calibration">Calibrazione Display</string>
 
     <string name="kcal_enabled">Acceso</string>
-    <string name="kcal_disabled">Spento</string>
+    <string name="kcal_disabled">Off</string>
     <string name="set_on_boot">Processo in avvio</string>
     <string name="color_red">Rosso</string>
     <string name="color_green">Verde</string>
     <string name="color_blue">Blu</string>
-    <string name="color_minimum>Minimo</string>
+    <string name="color_minimum">Minimo</string>
     <string name="saturation">Saturazione</string>
     <string name="value">Valore</string>
     <string name="contrast">Contrasto</string>
@@ -113,13 +118,15 @@
     <string name="preset_version_1">Versione 1</string>
     <string name="preset_version_2">Versione 2</string>
     <string name="preset_version_3">Versione 3</string>
-    <string name="preset_triluminous">Triluminoso</string>
+    <string name="preset_triluminous">Triluminous</string>
     <string name="preset_deep_black_white">Nero Scuro e Bianco</string>
     <string name="preset_deep_natural">Deep Natural</string>
     <string name="preset_cool_amoled">Cool Amoled</string>
     <string name="preset_extreme_amoled">Extreme Amoled</string>
     <string name="preset_warm_amoled">Warm Amoled</string>
     <string name="preset_hybrid_mamba">Hybrid Mamba</string>
+    <string name="preset_hide_ge1">Nascondi l'effetto fantasma 1</string>
+    <string name="preset_hide_ge2">Nascondi l'effetto fantasma 2</string>
 
     <!-- Buttons -->
     <string name="buttons_title">Tasti</string>
