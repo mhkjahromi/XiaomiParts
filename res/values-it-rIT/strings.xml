@@ -96,7 +96,7 @@
 
     <string name="kcal_enabled">Acceso</string>
     <string name="kcal_disabled">Spento</string>
-    <string name="set_on_boot">Settato all'avvio</string>
+    <string name="set_on_boot">Processo in avvio</string>
     <string name="color_red">Rosso</string>
     <string name="color_green">Verde</string>
     <string name="color_blue">Blu</string>
