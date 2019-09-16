@@ -67,14 +67,16 @@
             android:key="yellow_led"
             android:max="190"
             app:min="0"
-            android:title="@string/yellow_led" />
+            android:title="@string/yellow_led"
+            android:summary="@string/custom_led_summary" />
 			
         <org.lineageos.settings.device.preferences.SecureSettingCustomSeekBarPreference
             android:defaultValue="0"
             android:key="white_led"
             android:max="190"
             app:min="0"
-            android:title="@string/white_led" />
+            android:title="@string/white_led"
+            android:summary="@string/custom_led_summary" />
 
     </PreferenceCategory>
 
