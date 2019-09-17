@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 Mohammad Hasan Keramat Jahromi m.h.k.jahromi@gmail.com
+ * Copyright (C) 2016 The Dirty Unicorns Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,8 +19,8 @@ package org.lineageos.settings.device.preferences;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.res.TypedArray;
-import androidx.preference.Preference;
-import androidx.preference.PreferenceViewHolder;
+import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceViewHolder;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
