@@ -126,8 +126,6 @@
     <string name="preset_extreme_amoled">Extreme Amoled</string>
     <string name="preset_warm_amoled">Warm Amoled</string>
     <string name="preset_hybrid_mamba">Hybrid Mamba</string>
-    <string name="preset_hide_ge1">Nascondi l'effetto fantasma 1</string>
-    <string name="preset_hide_ge2">Nascondi l'effetto fantasma 2</string>
 
     <!-- Buttons -->
     <string name="buttons_title">Tasti</string>
