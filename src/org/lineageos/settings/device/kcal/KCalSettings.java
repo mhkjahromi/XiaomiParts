@@ -18,8 +18,8 @@ package org.lineageos.settings.device.kcal;
 
 import android.os.Bundle;
 import android.provider.Settings;
-import androidx.preference.PreferenceFragment;
-import androidx.preference.Preference;
+import android.support.v14.preference.PreferenceFragment;
+import android.support.v7.preference.Preference;
 
 import org.lineageos.settings.device.R;
 import org.lineageos.settings.device.preferences.SecureSettingCustomSeekBarPreference;
