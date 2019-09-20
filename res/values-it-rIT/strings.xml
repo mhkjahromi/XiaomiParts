@@ -141,10 +141,6 @@
     <string name="dt2w_title">Doppio Tocco per accendere lo schermo</string>
     <string name="dt2w_summary">Il Doppio Tocco sullo schermo accende il dispositivo</string>
 	
-	<!-- QC Limit -->
-    <string name="qc_limit_title">Limite per la Carica Rapida [BETA]</string>
-    <string name="qc_limit_summary">Imposta il limite per il tuo caricatore in mA</string>
-	
     <!-- menu -->
     <string name="kcal_presets" translatable="false">@string/presets_dialog_title</string>
     <string name="kcal_reset">Reset</string>

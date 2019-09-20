@@ -77,20 +77,6 @@
             android:title="@string/vibration_strength_title" />
 
     </PreferenceCategory>
-	
-    <PreferenceCategory
-        android:key="qclimit"
-        android:title="@string/qc_limit_title">
-
-        <org.lineageos.settings.device.preferences.SecureSettingCustomSeekBarPreference
-            android:defaultValue="2500"
-            android:key="qc_limit"
-            android:max="3000"
-            app:min="1600"
-            app:units="mA"
-            android:title="@string/qc_limit_summary" />
-
-    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="display"

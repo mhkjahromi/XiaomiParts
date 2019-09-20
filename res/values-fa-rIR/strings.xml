@@ -138,10 +138,6 @@
     <string name="dt2w_title">حالت دو ضربه</string>
     <string name="dt2w_summary">زمانی که تلفن خاموش است با دو ضربه آن را روشن کنید</string>
 	
-	<!-- QC Limit -->
-    <string name="qc_limit_title">محدود کردن شارژ سریع</string>
-    <string name="qc_limit_summary">محدود کردن برق دریافتی تلفن از شارژر برحسب میلی آمپر</string>
-	
     <!-- menu -->
     <string name="kcal_presets" translatable="false">@string/presets_dialog_title</string>
     <string name="kcal_reset">بازنشانی</string>
