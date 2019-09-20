@@ -28,9 +28,7 @@
 
 	<!-- Torch -->
     <string name="torch_title">Torcia</string>
-    <string name="torch_brightness_title">Controllo del mixer</string>
-	<string name="yellow_led">LED giallo [BETA]</string>
-	<string name="white_led">LED bianco [BETA]</string>
+    <string name="torch_brightness_title">Luminosità</string>
 	
 	<!-- Vibration -->
     <string name="vibration_title">Feedback Tattico</string>

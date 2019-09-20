@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 The Xiaomi-SDM660 Project
+ * Copyright (C) 2019 Mohammad Hasan Keramat Jahromi m.h.k.jahromi@gmail.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,18 +44,6 @@ public class DeviceSettings extends PreferenceFragment implements
     // value of vtg_min and vtg_max
     public static final int MIN_VIBRATION = 12;
     public static final int MAX_VIBRATION = 127;
-	
-	// YELLOW LED
-	public static final String PREF_YELLOW_LED = "yellow_led";
-    public static final String YELLOW_LED_PATH = "/sys/devices/soc/400f000.qcom,spmi/spmi-0/spmi0-03/400f000.qcom,spmi:qcom,pmi8994@3:qcom,leds@d300/leds/led:torch_0/brightness";
-	public static final int MIN_YL = 0;
-    public static final int MAX_YL = 190;
-	
-	// WHITE LED
-	public static final String PREF_WHITE_LED = "white_led";
-    public static final String WHITE_LED_PATH = "/sys/devices/soc/400f000.qcom,spmi/spmi-0/spmi0-03/400f000.qcom,spmi:qcom,pmi8994@3:qcom,leds@d300/leds/led:torch_1/brightness";
-	public static final int MIN_WL = 0;
-    public static final int MAX_WL = 190;
 
 	// QC limit
     public static final String PREF_QC_LIMIT = "qc_limit";
@@ -106,8 +94,6 @@ public class DeviceSettings extends PreferenceFragment implements
     private SecureSettingSwitchPreference mFphome;
     private SecureSettingSwitchPreference mDt2w;
     private SecureSettingCustomSeekBarPreference mQuickCharge;
-    private SecureSettingCustomSeekBarPreference mYellowLed;
-    private SecureSettingCustomSeekBarPreference mWhiteLed;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -127,14 +113,6 @@ public class DeviceSettings extends PreferenceFragment implements
         mQuickCharge = (SecureSettingCustomSeekBarPreference) findPreference(PREF_QC_LIMIT);
         mQuickCharge.setEnabled(FileUtils.fileWritable(QC_LIMIT_PATH));
         mQuickCharge.setOnPreferenceChangeListener(this);
-		
-        mYellowLed = (SecureSettingCustomSeekBarPreference) findPreference(PREF_YELLOW_LED);
-        mYellowLed.setEnabled(FileUtils.fileWritable(YELLOW_LED_PATH));
-        mYellowLed.setOnPreferenceChangeListener(this);
-		
-        mWhiteLed = (SecureSettingCustomSeekBarPreference) findPreference(PREF_WHITE_LED);
-        mWhiteLed.setEnabled(FileUtils.fileWritable(WHITE_LED_PATH));
-        mWhiteLed.setOnPreferenceChangeListener(this);
 		
         PreferenceCategory displayCategory = (PreferenceCategory) findPreference(CATEGORY_DISPLAY);
         if (isAppNotInstalled(DEVICE_DOZE_PACKAGE_NAME)) {
@@ -224,16 +202,6 @@ public class DeviceSettings extends PreferenceFragment implements
                 FileUtils.setValue(QC_LIMIT_PATH, quickchargeValue);
                 break;
 				
-            case PREF_YELLOW_LED:
-                double yellowledValue = (int) value / 190.0 * (MAX_YL - MIN_YL) + MIN_YL;
-                FileUtils.setValue(YELLOW_LED_PATH, yellowledValue);
-                break;
-				
-            case PREF_WHITE_LED:
-                double whiteledValue = (int) value / 190.0 * (MAX_WL - MIN_WL) + MIN_WL;
-                FileUtils.setValue(WHITE_LED_PATH, whiteledValue);
-                break;
-
             case PREF_SPECTRUM:
                 mSPECTRUM.setValue((String) value);
                 mSPECTRUM.setSummary(mSPECTRUM.getEntry());
