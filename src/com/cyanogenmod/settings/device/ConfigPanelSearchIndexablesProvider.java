@@ -17,6 +17,7 @@
 
 package com.cyanogenmod.settings.device;
 
+import com.cyanogenmod.settings.device.R;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.MatrixCursor;
@@ -80,9 +81,6 @@ public class ConfigPanelSearchIndexablesProvider extends SearchIndexablesProvide
 
     private List<String> getNonIndexableKeys(Context context) {
         List<String> keys = new ArrayList<>();
-        if (!PackageManagerUtils.isAppInstalled(context, "com.cyanogenmod.pocketmode")) {
-            keys.add(Constants.FP_POCKETMODE_KEY);
-        }
         if (!FileUtils.fileExists(Constants.FP_HOME_KEY_NODE) &&
                 !FileUtils.fileExists(Constants.FP_WAKEUP_NODE)) {
             keys.add(Constants.FP_HOME_KEY);
