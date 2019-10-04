@@ -17,7 +17,6 @@
 
 package com.cyanogenmod.settings.device;
 
-import com.cyanogenmod.settings.device.R;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.MatrixCursor;
