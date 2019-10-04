@@ -33,14 +33,8 @@
 
         <SwitchPreference
             android:key="fp_wakeup"
-            android:title="@string/fingerprint_wakeup_title"
-            android:summary="@string/fingerprint_wakeup_summary" />
-
-        <SwitchPreference
-            android:key="fp_pocketmode"
-            android:title="@string/fingerprint_pocketmode_title"
-            android:summary="@string/fingerprint_pocketmode_summary"
-            android:dependency="fp_wakeup" />
+            android:title="@string/fp_wakeup_title"
+            android:summary="@string/fp_wakeup_summary" />
 
     </PreferenceCategory>
 
