@@ -25,8 +25,11 @@
     <string name="ambient_display_xiaomi">Xiaomi Doze</string>
     <string name="advanced_doze_summary">Ambient Display</string>
 
+    <!-- Torch -->
     <string name="torch_title">Linterna</string>
     <string name="torch_brightness_title">Brillo</string>
+	
+    <!-- Vibration -->
     <string name="vibration_title">Retroalimentación táctil</string>
     <string name="vibration_strength_title">Potencia</string>
 
@@ -119,6 +122,8 @@
     <string name="preset_extreme_amoled">Amoled Extremo</string>
     <string name="preset_warm_amoled">Amoled Cálido</string>
     <string name="preset_hybrid_mamba">Mamba Híbrida</string>
+    <string name="preset_hide_ge1">Ocultar Ghosting 1</string>
+    <string name="preset_hide_ge2">Ocultar Ghosting 2</string>
 
     <!-- Buttons -->
     <string name="buttons_title">Botones</string>
