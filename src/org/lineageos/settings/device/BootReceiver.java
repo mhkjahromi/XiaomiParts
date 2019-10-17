@@ -70,6 +70,8 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
                 DeviceSettings.PREF_FP_HOME, 0));
         FileUtils.setValue(DeviceSettings.DT2_W_PATH, Settings.Secure.getInt(context.getContentResolver(),
                 DeviceSettings.PREF_DT2_W, 0));
+        FileUtils.setValue(DeviceSettings.FP_POCKET_PATH, Settings.Secure.getInt(context.getContentResolver(),
+                DeviceSettings.PREF_FP_POCKET, 0));
         context.startService(new Intent(context, DiracService.class));
     }
 }

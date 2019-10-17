@@ -138,7 +138,9 @@
     <string name="fp_wakeup_summary">Allow fingerprint to wake the device while screen is off</string>
     <string name="fp_home_title">Fingerprint as button</string>
     <string name="fp_home_summary">Use fingerprint reader as a customizeble button</string>
-	
+	<string name="fp_pocketmode_title">Fingerprint Pocketmode</string>
+	<string name="fp_pocketmode_summary">Turn off fingerprint when your device is in the pocket</string>
+		
     <!-- Gestures -->
     <string name="gestures_title">Gestures</string>
     <string name="dt2w_title">Double Tap to wake</string>

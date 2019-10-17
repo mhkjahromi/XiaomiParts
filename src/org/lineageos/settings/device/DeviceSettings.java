@@ -69,6 +69,9 @@ public class DeviceSettings extends PreferenceFragment implements
 	public static final String CATEGORY_FPHOME = "fp_home";
     public static final String PREF_FP_HOME = "fphome";
     public static final String FP_HOME_PATH = "/sys/devices/soc/soc:fpc_fpc1020/enable_key_events";
+	public static final String CATEGORY_FPPOCKET = "fp_pocket";
+    public static final String PREF_FP_POCKET = "fppocket";
+    public static final String FP_POCKET_PATH = "/sys/devices/soc/soc:fpc_fpc1020/proximity_state";
 	
 	//gestures
     public static final String CATEGORY_DT2W = "dt2_w";
@@ -88,6 +91,7 @@ public class DeviceSettings extends PreferenceFragment implements
     private SecureSettingSwitchPreference mFpwakeup;
     private SecureSettingSwitchPreference mFphome;
     private SecureSettingSwitchPreference mDt2w;
+	private SecureSettingSwitchPreference mFppocket;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -171,6 +175,14 @@ public class DeviceSettings extends PreferenceFragment implements
         } else {
             getPreferenceScreen().removePreference(findPreference(CATEGORY_DT2W));
         }
+		
+        if (FileUtils.fileWritable(FP_POCKET_PATH)) {
+            mFppocket = (SecureSettingSwitchPreference) findPreference(PREF_FP_POCKET);
+            mFppocket.setChecked(FileUtils.getFileValueAsBoolean(FP_POCKET_PATH, false));
+            mFppocket.setOnPreferenceChangeListener(this);
+        } else {
+            getPreferenceScreen().removePreference(findPreference(CATEGORY_FPPOCKET));
+        }
     }
 
     @Override
@@ -234,6 +246,10 @@ public class DeviceSettings extends PreferenceFragment implements
 				
             case PREF_DT2_W:
                 FileUtils.setValue(DT2_W_PATH, (boolean) value);
+                break;
+				
+            case PREF_FP_POCKET:
+                FileUtils.setValue(FP_POCKET_PATH, (boolean) value);
                 break;
 
             default:
