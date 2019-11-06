@@ -1,0 +1,4 @@
+Add USB Fastcharge toggle
+Check new dirac blobs
+Check Pocketmode toggle
+Add all sepolicy permissions
