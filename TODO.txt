@@ -4,3 +4,5 @@
 3.Add all sepolicy permissions
 4.Add dirac blobs
 5.Check sound control kernel feature and add if worked fine.
+
+WIP: Try to compile with Android Studio
