@@ -1,3 +1,7 @@
+# XiaomiParts
+Ported XiaomiParts for msm8996 devices based on 4.4.y kernel.
+
+# TODO List
 1.Add USB Fastcharge feature in kernel. - Done
 2.Add USB Fastcharge toggle.
 3.Check Pocketmode toggle. - Done
