@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2018 The Xiaomi-SDM660 Project
- * Copyright (C) 2019 Mohammad Hasan Keramat Jahromi m.h.k.jahromi@gmail.com
- *
+ * Copyright (C) 2019-2020 mhkjahromi <m.h.k.jahromi@gmail.com>
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,18 +19,64 @@ package org.lineageos.settings.device;
 
 import android.os.SystemProperties;
 
+import android.util.Log; 
+
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.NullPointerException;
+import java.lang.SecurityException;
 
-class FileUtils {
+public class FileUtils {
 
     static boolean fileWritable(String filename) {
         return fileExists(filename) && new File(filename).canWrite();
     }
 
+    private static final String TAG = "FileUtils";
+
+    private FileUtils() {
+        // This class is not supposed to be instantiated
+    }
+
+    /**
+     * Reads the first line of text from the given file.
+     * Reference {@link BufferedReader#readLine()} for clarification on what a line is
+     *
+     * @return the read line contents, or null on failure
+     */
+    public static String readOneLine(String fileName) {
+        String line = null;
+        BufferedReader reader = null;
+
+        try {
+            reader = new BufferedReader(new FileReader(fileName), 512);
+            line = reader.readLine();
+        } catch (FileNotFoundException e) {
+            Log.w(TAG, "No such file " + fileName + " for reading", e);
+        } catch (IOException e) {
+            Log.e(TAG, "Could not read from file " + fileName, e);
+        } finally {
+            try {
+                if (reader != null) {
+                    reader.close();
+                }
+            } catch (IOException e) {
+                // Ignored, not much we can do anyway
+            }
+        }
+
+        return line;
+    }
+
+    public static boolean isFileReadable(String fileName) {
+        final File file = new File(fileName);
+        return file.exists() && file.canRead();
+    }
+    
     private static boolean fileExists(String filename) {
         if (filename == null) {
             return false;
@@ -38,14 +84,14 @@ class FileUtils {
         return new File(filename).exists();
     }
 
-    static void setValue(String path, int value) {
+    public static void setValue(String path, Boolean value) {
         if (fileWritable(path)) {
             if (path == null) {
                 return;
             }
             try {
                 FileOutputStream fos = new FileOutputStream(new File(path));
-                fos.write(Integer.toString(value).getBytes());
+                fos.write((value ? "1" : "0").getBytes());
                 fos.flush();
                 fos.close();
             } catch (IOException e) {
@@ -54,14 +100,14 @@ class FileUtils {
         }
     }
 
-    static void setValue(String path, boolean value) {
+    public static void setValue(String path, int value) {
         if (fileWritable(path)) {
             if (path == null) {
                 return;
             }
             try {
                 FileOutputStream fos = new FileOutputStream(new File(path));
-                fos.write((value ? "1" : "0").getBytes());
+                fos.write(Integer.toString(value).getBytes());
                 fos.flush();
                 fos.close();
             } catch (IOException e) {
@@ -86,7 +132,7 @@ class FileUtils {
         }
     }
 
-    static void setValue(String path, String value) {
+    public static void setValue(String path, String value) {
         if (fileWritable(path)) {
             if (path == null) {
                 return;
@@ -100,6 +146,44 @@ class FileUtils {
                 e.printStackTrace();
             }
         }
+    }
+
+    static String getValue(String filename) {
+        if (filename == null) {
+            return null;
+        }
+        String line;
+        try (BufferedReader br = new BufferedReader(new FileReader(filename), 1024)) {
+            line = br.readLine();
+        } catch (IOException e) {
+            return null;
+        }
+        // ignore
+        return line;
+    }
+
+    static void setStringProp(String prop, String value) {
+        SystemProperties.set(prop, value);
+    }
+
+    static String getStringProp(String prop, String defaultValue) {
+        return SystemProperties.get(prop, defaultValue);
+    }
+
+    static void setintProp(String prop, int value) {
+        SystemProperties.set(prop, String.valueOf(value));
+    }
+
+    static int getintProp(String prop, int defaultValue) {
+        return SystemProperties.getInt(prop, defaultValue);
+    }
+
+    static boolean getFileValueAsBoolean(String filename, boolean defValue) {
+        String fileValue = readLine(filename);
+        if (fileValue != null) {
+            return !fileValue.equals("0");
+        }
+        return defValue;
     }
 
     static String readLine(String filename) {
@@ -123,41 +207,5 @@ class FileUtils {
             }
         }
         return line;
-    }
-
-    static boolean getFileValueAsBoolean(String filename, boolean defValue) {
-        String fileValue = readLine(filename);
-        if (fileValue != null) {
-            return !fileValue.equals("0");
-        }
-        return defValue;
-    }
-
-    static void setProp(String prop, boolean value) {
-        if (value) {
-            SystemProperties.set(prop, "1");
-        } else {
-            SystemProperties.set(prop, "0");
-        }
-    }
-
-    static boolean getProp(String prop, boolean defaultValue) {
-        return SystemProperties.getBoolean(prop, defaultValue);
-    }
-
-    static void setStringProp(String prop, String value) {
-        SystemProperties.set(prop, value);
-    }
-
-    static String getStringProp(String prop, String defaultValue) {
-        return SystemProperties.get(prop, defaultValue);
-    }
-
-    static void setintProp(String prop, int value) {
-        SystemProperties.set(prop, String.valueOf(value));
-    }
-
-    static int getintProp(String prop, int defaultValue) {
-        return SystemProperties.getInt(prop, defaultValue);
     }
 }

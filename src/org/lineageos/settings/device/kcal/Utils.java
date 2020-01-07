@@ -1,6 +1,5 @@
 /*
  * Copyright (C) 2018 The Xiaomi-SDM660 Project
- * Copyright (C) 2019 Mohammad Hasan Keramat Jahromi m.h.k.jahromi@gmail.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.

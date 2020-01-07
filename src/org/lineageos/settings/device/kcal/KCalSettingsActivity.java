@@ -1,6 +1,5 @@
 /*
  * Copyright (C) 2018 The Xiaomi-SDM660 Project
- * Copyright (C) 2019 Mohammad Hasan Keramat Jahromi m.h.k.jahromi@gmail.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,12 +32,13 @@ public class KCalSettingsActivity extends Activity implements Utils {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_kcal);
 
-        Fragment fragment = getFragmentManager().findFragmentById(android.R.id.content);
+        Fragment fragment = getFragmentManager().findFragmentById(R.id.fragment_kcal);
         if (fragment == null) {
             mKCalSettingsFragment = new KCalSettings();
             getFragmentManager().beginTransaction()
-                    .add(android.R.id.content, mKCalSettingsFragment)
+                    .add(R.id.fragment_kcal, mKCalSettingsFragment)
                     .commit();
         } else {
             mKCalSettingsFragment = (KCalSettings) fragment;

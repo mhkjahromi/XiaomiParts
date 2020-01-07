@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 2018 The Xiaomi-SDM660 Project
- * Copyright (C) 2019 Mohammad Hasan Keramat Jahromi m.h.k.jahromi@gmail.com
+ * Copyright (C) 2017 AICP
+ * Copyright (C) 2018 CarbonROM
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import android.content.ContentResolver;
 import android.preference.PreferenceDataStore;
 import android.provider.Settings;
 
-public class SecureSettingsStore extends android.support.v7.preference.PreferenceDataStore
+public class SecureSettingsStore extends androidx.preference.PreferenceDataStore
         implements PreferenceDataStore {
 
     private final ContentResolver mContentResolver;

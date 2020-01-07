@@ -1,6 +1,5 @@
 /*
- * Copyright (C) 2018 The Xiaomi-SDM660 Project
- * Copyright (C) 2019 Mohammad Hasan Keramat Jahromi m.h.k.jahromi@gmail.com
+ * Copyright (C) 2016 The Dirty Unicorns Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,8 +19,8 @@ package org.lineageos.settings.device.preferences;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceViewHolder;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceViewHolder;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
@@ -49,7 +48,6 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
     private int mMax;
     private String mUnits;
     private String mDefaultText;
-    private LinearLayout mStatusTextContainer;
     private TextView mTitle;
     private TextView mStatusText;
     private AlertDialog mDialog;
@@ -152,9 +150,9 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
             mStatusText.setText(mCurrentValue + mUnits);
         }
         mSeekBar.setProgress(mCurrentValue - mMin);
-        mStatusTextContainer = (LinearLayout) view.findViewById(R.id.text_container);
-        mStatusTextContainer.setClickable(true);
-        mStatusTextContainer.setOnClickListener((View v) -> {
+        LinearLayout statusTextContainer = (LinearLayout) view.findViewById(R.id.text_container);
+        statusTextContainer.setClickable(true);
+        statusTextContainer.setOnClickListener((View v) -> {
             mDialog = new AlertDialog.Builder(getContext())
                     .setTitle(getContext().getResources().getString(R.string.edit_value))
                     .setView(R.layout.custom_seekbar_preference_dialog)

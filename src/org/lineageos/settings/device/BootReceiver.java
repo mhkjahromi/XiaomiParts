@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2018 The Xiaomi-SDM660 Project
- * Copyright (C) 2019 Mohammad Hasan Keramat Jahromi m.h.k.jahromi@gmail.com
+ * Copyright (C) 2019-2020 mhkjahromi <m.h.k.jahromi@gmail.com>
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,16 +62,17 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
                         DeviceSettings.PREF_TORCH_BRIGHTNESS, 100));
         FileUtils.setValue(DeviceSettings.VIBRATION_STRENGTH_PATH, Settings.Secure.getInt(
                 context.getContentResolver(), DeviceSettings.PREF_VIBRATION_STRENGTH, 80) / 100.0 * (DeviceSettings.MAX_VIBRATION - DeviceSettings.MIN_VIBRATION) + DeviceSettings.MIN_VIBRATION);
-        FileUtils.setValue(DeviceSettings.BUTTONS_PATH, Settings.Secure.getInt(context.getContentResolver(),
-                DeviceSettings.PREF_BUTTONS, 0));
-        FileUtils.setValue(DeviceSettings.FP_WAKEUP_PATH, Settings.Secure.getInt(context.getContentResolver(),
-                DeviceSettings.PREF_FP_WAKEUP, 0));
-        FileUtils.setValue(DeviceSettings.FP_HOME_PATH, Settings.Secure.getInt(context.getContentResolver(),
-                DeviceSettings.PREF_FP_HOME, 0));
-        FileUtils.setValue(DeviceSettings.DT2_W_PATH, Settings.Secure.getInt(context.getContentResolver(),
-                DeviceSettings.PREF_DT2_W, 0));
-        FileUtils.setValue(DeviceSettings.FP_POCKET_PATH, Settings.Secure.getInt(context.getContentResolver(),
-                DeviceSettings.PREF_FP_POCKET, 0));
-        context.startService(new Intent(context, DiracService.class));
+        FileUtils.setValue(DeviceSettings.SWAP_BUTTONS_PATH, Settings.Secure.getInt(
+                context.getContentResolver(), DeviceSettings.PREF_SWAP_BUTTONS, 0));
+        FileUtils.setValue(DeviceSettings.FPWAKEUP_PATH, Settings.Secure.getInt(
+                context.getContentResolver(), DeviceSettings.PREF_FPWAKEUP, 0));
+        FileUtils.setValue(DeviceSettings.FPHOME_PATH, Settings.Secure.getInt(
+                context.getContentResolver(), DeviceSettings.PREF_FPHOME, 0));
+        FileUtils.setValue(DeviceSettings.FPPOCKET_PATH, Settings.Secure.getInt(
+                context.getContentResolver(), DeviceSettings.PREF_FPPOCKET, 0));
+        FileUtils.setValue(DeviceSettings.DT2W_PATH, Settings.Secure.getInt(
+                context.getContentResolver(), DeviceSettings.PREF_DT2W, 0));
+        FileUtils.setValue(DeviceSettings.USB_FASTCHARGE_PATH, Settings.Secure.getInt(
+                context.getContentResolver(), DeviceSettings.PREF_USB_FASTCHARGE, 0));
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2018 The Xiaomi-SDM660 Project
-	 Copyright (C) 2019 Mohammad Hasan Keramat Jahromi m.h.k.jahromi@gmail.com
+     Copyright (C) 2019-2020 mhkjahromi <m.h.k.jahromi@gmail.com>
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -46,7 +46,7 @@
         <activity
             android:name=".DeviceSettingsActivity"
             android:exported="false"
-            android:icon="@drawable/round_build_24"
+            android:icon="@drawable/ic_mi"
             android:label="@string/advanced_settings"
             android:launchMode="singleTask">
             <intent-filter>
@@ -58,6 +58,9 @@
             <meta-data
                 android:name="com.android.settings.dismiss"
                 android:value="9,13,30" />
+            <meta-data
+                android:name="com.android.settings.bg.hint"
+                android:resource="@color/homepage_parts_background" />
             <meta-data
                 android:name="com.android.settings.category"
                 android:value="com.android.settings.category.ia.homepage" />
@@ -77,6 +80,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".KeyHandler" />
+
         <service
             android:name=".PerformanceTileService"
             android:icon="@drawable/spectrum_balance"
@@ -86,10 +91,6 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
         </service>
-
-        <service
-            android:name=".DiracService"
-            android:enabled="true"
-            android:stopWithTask="false" />
+        
     </application>
 </manifest>

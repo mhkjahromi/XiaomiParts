@@ -1,6 +1,5 @@
 /*
  * Copyright (C) 2018 The Xiaomi-SDM660 Project
- * Copyright (C) 2019 Mohammad Hasan Keramat Jahromi m.h.k.jahromi@gmail.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,17 +18,16 @@ package org.lineageos.settings.device.kcal;
 
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.v14.preference.PreferenceFragment;
-import android.support.v7.preference.Preference;
+import androidx.preference.PreferenceFragment;
+import androidx.preference.Preference;
 
+import org.lineageos.settings.device.FileUtils;
 import org.lineageos.settings.device.R;
 import org.lineageos.settings.device.preferences.SecureSettingCustomSeekBarPreference;
 import org.lineageos.settings.device.preferences.SecureSettingSwitchPreference;
 
 public class KCalSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener, Utils {
-
-    private final FileUtils mFileUtils = new FileUtils();
 
     private SecureSettingSwitchPreference mEnabled;
     private SecureSettingSwitchPreference mSetOnBoot;
@@ -76,8 +74,8 @@ public class KCalSettings extends PreferenceFragment implements
         mBlue.setOnPreferenceChangeListener(this);
 
         mSaturation = (SecureSettingCustomSeekBarPreference) findPreference(PREF_SATURATION);
-        mSaturation.setEnabled(!(Settings.Secure.getInt(getContext().getContentResolver(),
-                PREF_GRAYSCALE, 0) == 1) && enabled);
+        mSaturation.setEnabled((Settings.Secure.getInt(getContext().getContentResolver(),
+                PREF_GRAYSCALE, 0) == 0));
         mSaturation.setOnPreferenceChangeListener(this);
 
         mValue = (SecureSettingCustomSeekBarPreference) findPreference(PREF_VALUE);
@@ -101,45 +99,45 @@ public class KCalSettings extends PreferenceFragment implements
 
         switch (key) {
             case PREF_ENABLED:
-                mFileUtils.setValue(KCAL_ENABLE, (boolean) value);
+                FileUtils.setValue(KCAL_ENABLE, (boolean) value);
                 mEnabled.setTitle((boolean) value ? R.string.kcal_enabled : R.string.kcal_disabled);
                 break;
 
             case PREF_MINIMUM:
-                mFileUtils.setValue(KCAL_MIN, (int) value);
+                FileUtils.setValue(KCAL_MIN, (int) value);
                 break;
 
             case PREF_RED:
                 rgbString = value + " " + mGreen.getValue() + " " + mBlue.getValue();
-                mFileUtils.setValue(KCAL_RGB, rgbString);
+                FileUtils.setValue(KCAL_RGB, rgbString);
                 break;
 
             case PREF_GREEN:
                 rgbString = mRed.getValue() + " " + value + " " + mBlue.getValue();
-                mFileUtils.setValue(KCAL_RGB, rgbString);
+                FileUtils.setValue(KCAL_RGB, rgbString);
                 break;
 
             case PREF_BLUE:
                 rgbString = mRed.getValue() + " " + mGreen.getValue() + " " + value;
-                mFileUtils.setValue(KCAL_RGB, rgbString);
+                FileUtils.setValue(KCAL_RGB, rgbString);
                 break;
 
             case PREF_SATURATION:
                 if (!(Settings.Secure.getInt(getContext().getContentResolver(), PREF_GRAYSCALE, 0) == 1)) {
-                    mFileUtils.setValue(KCAL_SAT, (int) value + SATURATION_OFFSET);
+                    FileUtils.setValue(KCAL_SAT, (int) value + SATURATION_OFFSET);
                 }
                 break;
 
             case PREF_VALUE:
-                mFileUtils.setValue(KCAL_VAL, (int) value + VALUE_OFFSET);
+                FileUtils.setValue(KCAL_VAL, (int) value + VALUE_OFFSET);
                 break;
 
             case PREF_CONTRAST:
-                mFileUtils.setValue(KCAL_CONT, (int) value + CONTRAST_OFFSET);
+                FileUtils.setValue(KCAL_CONT, (int) value + CONTRAST_OFFSET);
                 break;
 
             case PREF_HUE:
-                mFileUtils.setValue(KCAL_HUE, (int) value);
+                FileUtils.setValue(KCAL_HUE, (int) value);
                 break;
 
             case PREF_GRAYSCALE:
@@ -180,7 +178,7 @@ public class KCalSettings extends PreferenceFragment implements
     void setmGrayscale(boolean checked) {
         mGrayscale.setChecked(checked);
         mSaturation.setEnabled(!checked);
-        mFileUtils.setValue(KCAL_SAT, checked ? 128 :
+        FileUtils.setValue(KCAL_SAT, checked ? 128 :
                 Settings.Secure.getInt(getContext().getContentResolver(), PREF_SATURATION,
                         SATURATION_DEFAULT) + SATURATION_OFFSET);
     }
