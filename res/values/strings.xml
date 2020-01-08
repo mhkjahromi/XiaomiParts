@@ -16,30 +16,30 @@
 -->
 <resources>
     <!-- App name and summary -->
-    <string name="advanced_settings">Device Features</string>
-    <string name="advanced_settings_summary">Device specific features</string>
+    <string name="advanced_settings">Функции устройства</string>
+    <string name="advanced_settings_summary">Особенности устройства</string>
 
     <!-- Buttons -->
-    <string name="buttons_title">Buttons</string>
-    <string name="swapbuttons_title">Swap buttons</string>
-    <string name="swapbuttons_summary">Swap the order of recents and back buttons</string>
+    <string name="buttons_title">Кнопки</string>
+    <string name="swapbuttons_title">Поменять кнопки местами</string>
+    <string name="swapbuttons_summary">Поменяйте местами кнопки "Многозадачность" и "Назад"<string>
 
 	<!-- Fingerprint options -->
-    <string name="fp_title">Fingerprint options</string>
-    <string name="fp_wakeup_title">Fingerprint wakes device</string>
-    <string name="fp_wakeup_summary">Allow fingerprint to wake the device while screen is off</string>
-    <string name="fp_home_title">Fingerprint as button</string>
-    <string name="fp_home_summary">Use fingerprint reader as a customizeble button</string>
-	<string name="fp_pocketmode_title">Fingerprint pocketmode</string>
-	<string name="fp_pocketmode_summary">Turn off fingerprint when your device is in the pocket</string>
+    <string name="fp_title">Настройки сканера отпечатков</string>
+    <string name="fp_wakeup_title">Сканер будит устройство</string>
+    <string name="fp_wakeup_summary">Разрешить сканеру отпечатков будить устройство, когда экран выключен</string>
+    <string name="fp_home_title">Сканер отпечатков как кнопка</string>
+    <string name="fp_home_summary">Использовать сканер отпечатков как кнопку "Домой"</string>
+	<string name="fp_pocketmode_title">Сканер отпечатков в кармане</string>
+	<string name="fp_pocketmode_summary">Отключить сканер отпечатков когда устройство в кармане</string>
 
     <!-- Gestures -->
-    <string name="gestures_title">Gestures</string>
-    <string name="dt2w_title">Double Tap to wake</string>
-    <string name="dt2w_summary">Double tap on screen wake device</string>
+    <string name="gestures_title">Жесты</string>
+    <string name="dt2w_title">Включить двойным касанием</string>
+    <string name="dt2w_summary">Разбудить устройство двойным касанием</string>
 
     <!-- USB Fastcharge -->
-    <string name="usb_fastcharge_title">USB Fastcharge</string>
+    <string name="usb_fastcharge_title">USB </string>
     <string name="fastcharge_title">Enable USB Fastcharge</string>
     <string name="fastcharge_summary">Use fastcharge when connected to a computer via usb port</string>
 
