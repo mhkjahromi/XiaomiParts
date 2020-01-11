@@ -58,7 +58,7 @@
     <string name="ambient_display_xiaomi">Xiaomi Doze</string>
     <string name="advanced_doze_summary">Ambient Display</string>
 
-    <string name="vibration_title">Тактильная обратная связь</string>
+    <string name="vibration_title">Вибрация</string>
     <string name="vibration_strength_title">Сила</string>
 
     <!-- Spectrum Profiles -->
@@ -69,10 +69,10 @@
 
     <!-- Values for Spectrum Presets -->
     <string name="spectrum_performance">Производительность</string>
-    <string name="spectrum_battery">Энергосбережения</string>
+    <string name="spectrum_battery">Энергосбережение</string>
     <string name="spectrum_gaming">Игровой режим</string>
     <string name="spectrum_balance">Баланс</string>
-    <string name="spectrum_extreme_battery">Экстримальное энергосбережение</string>
+    <string name="spectrum_extreme_battery">Экстремальное энергосбережение</string>
 
     <!-- kcal -->
     <string name="advanced_settings_kcal">Калибровка цвета дисплея</string>
