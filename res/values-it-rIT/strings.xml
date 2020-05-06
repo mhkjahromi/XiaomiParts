@@ -52,7 +52,7 @@
 
     <!-- KCal -->
     <string name="device_kcal_title">Colori Display</string>
-    <string name="device_kcal_suammary">Calibrazione dei colori del display tramite KCAL</string>
+    <string name="device_kcal_summary">Calibrazione dei colori del display tramite KCAL</string>
 
     <!-- Ambient Display -->
     <string name="ambient_display_xiaomi">Xiaomi Doze</string>
